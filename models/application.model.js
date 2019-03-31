@@ -20,5 +20,6 @@ const applicationSchema = new Schema({
     created_date: {
         default: Date.now()
     },
+});
 
-})
+module.exports = mongoose.model('Application', applicationSchema);
