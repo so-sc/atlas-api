@@ -52,9 +52,9 @@ exports.getAuth = function (req, res) {
 //==========================================================================================
 exports._auth_create_checks = [
     check('email').isEmail().exists(),
-    check('password').isLength({min: 6}).exists(),
+    check('user_id').isLength({min: 10}).exists(),
     check('name').exists().isLength({min: 4}),
-    check('key').exists().isLength({min: 5})
+    check('description').exists().isLength({min: 10}),
 ];
 exports.createAuth = function (req, res) {
     //check for any validation errors

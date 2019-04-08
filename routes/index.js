@@ -5,7 +5,7 @@ router.use('/api', require('./api'));
 
 router.get('/', (req, res) => {
     res.status(200).json({
-        API: 'Routes'
+        message: 'API Route'
     });
 });
 

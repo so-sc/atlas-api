@@ -7,6 +7,7 @@ const verify = require('../../../middlewares/verify');
 const authRoute      = require('./auth.route');
 const registerRoute  = require('./register.route');
 const loginRoute     = require('./login.route');
+const eventsRoute    = require('./events.route');
 
 //======== Register the API routes
 router.get('/', (req, res) => {
@@ -18,5 +19,6 @@ router.get('/', (req, res) => {
 router.use('/auth', authRoute);
 router.use('/login', loginRoute);
 router.use('/register', registerRoute);
+router.use('/events', eventsRoute);
 
 module.exports = router;

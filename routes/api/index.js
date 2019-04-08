@@ -5,7 +5,9 @@ var router = express.Router();
 router.use('/v1', require('./v1'));
 
 router.get('/', (req, res) => {
-    res.send('API ROute')
+    res.status(200).json({
+        message: 'API V1'
+    });
 });
 
 

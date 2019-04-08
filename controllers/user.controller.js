@@ -12,8 +12,8 @@ exports._register_checks = [
     check('phone').isMobilePhone().isLength({min: 10}).exists(),
     check('gender').isAlpha().exists(),
     check('year').isNumeric().exists(),
-    check('college').exists().isAlpha().isLength({ min: 4, max: 60 }),
-    check('branch').exists().isAlpha().isLength({ min: 3, max: 50 })
+    check('college').exists().isLength({ min: 4, max: 60 }),
+    check('branch').exists().isLength({ min: 3, max: 50 })
 ];
 exports.register = function (req, res) {
 
@@ -82,7 +82,8 @@ exports.logIn = function (req, res) {
             let token = jwt.sign( { 
                 id: user._id, 
                 email: user.email,
-                auth_date: Date.now(),
+                auth_date: Date.now(), 
+                type: user.admin ? "admin" : "user",
             }, jwt_secret, {
                 expiresIn: 604800 // valid till a week
             });
